@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BookingSystem.Core/BookingSystem.Core.csproj" />
+  <Project Path="BookingSystem/BookingSystem.csproj" />
+</Solution>
