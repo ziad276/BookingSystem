@@ -1,9 +1,7 @@
-﻿using BookingSystem.Application.Exceptions;
-using BookingSystem.Application.Repository;
+﻿using BookingSystem.Application.Repository;
 using BookingSystem.Application.ServiceContracts;
 using BookingSystem.Core.Entities;
 using BookingSystem.Core.Enums;
-using System.Net;
 
 
 namespace BookingSystem.Application.Services
@@ -52,16 +50,26 @@ namespace BookingSystem.Application.Services
             return await _appointmentRepository.GetAppointmentsByProviderAsync(providerId);
         }
 
-        public async Task CreateAppointmentAsync(int providerId, DateTime startTime, DateTime endTime)
+        public async Task<bool> CreateAppointmentAsync(int providerId, DateTime startTime, DateTime endTime)
         {
-            await _appointmentRepository.AddAppointmentAsync(new Appointment
+            if (startTime >= endTime)
+            {
+                throw new ArgumentException("Start time must be before end time.");
+            }
+
+            if (startTime < DateTime.Now)
+            {
+                throw new ArgumentOutOfRangeException("Start time must be in the future.");
+            }
+
+           return await _appointmentRepository.AddAppointmentAsync(new Appointment
             {
                 ProviderId = providerId,
                 StartTime = startTime,
                 EndTime = endTime,
                 Status = Status.Available
             });
-
+           
         }
 
         public async Task<BookingResult> UnbookingAppointmentAsync(int appointmentId, int userId)

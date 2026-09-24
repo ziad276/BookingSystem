@@ -5,7 +5,7 @@ namespace BookingSystem.Application.ServiceContracts
 {
     public interface IProviderService
     {
-        Task<Provider> CreateProviderAccountAsync(int userId);
+        Task<bool> CreateProviderAccountAsync(int userId);
         Task<List<Provider>> BrowseProvidersAsync();
     }
 }

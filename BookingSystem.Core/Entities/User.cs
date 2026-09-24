@@ -10,7 +10,7 @@ namespace BookingSystem.Core.Entities
     public class User
     {
         public int Id { get; set; }
-        public Role Role { get; set; }
+        public Role Role { get; set; } = Role.Client;
         [Required]
         public string Name { get; set; }
         [Required]
