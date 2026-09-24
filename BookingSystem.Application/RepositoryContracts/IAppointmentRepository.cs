@@ -10,7 +10,7 @@ namespace BookingSystem.Application.Repository
     {
         Task<bool> AddAppointmentAsync(Appointment appointment);
         Task<Appointment> GetAppointmentByIdAsync(int appointmentId);
-        Task<List<Appointment>> GetAppointmentsByProviderAsync(int providerId, Status? status = null);
+        Task<List<Appointment>> GetAppointmentsByProviderAsync(int providerId, Status? status = null); // Show me Provider's X appointments, optionally filtered by status
         Task<bool> UpdateAppointmentAsync(Appointment appointment);
 
     }
