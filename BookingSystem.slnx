@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="BookingSystem.Application/BookingSystem.Application.csproj" Id="2200063c-e43b-4e14-9b19-c45c3b2733ee" />
   <Project Path="BookingSystem.Core/BookingSystem.Core.csproj" />
-  <Project Path="BookingSystem/BookingSystem.csproj" />
+  <Project Path="BookingSystem.Infrastructure/BookingSystem.Infrastructure.csproj" Id="31c154dc-69ea-4263-b1a7-ffa1989aff34" />
+  <Project Path="BookingSystem/BookingSystem.UI.csproj" />
 </Solution>
