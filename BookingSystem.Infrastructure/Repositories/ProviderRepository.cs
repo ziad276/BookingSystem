@@ -21,7 +21,7 @@ namespace BookingSystem.Infrastructure.Repositories
             return true;
         }
 
-        public async Task<Provider> GetProviderByUserIdAsync(int userId)
+        public async Task<Provider> GetProviderByUserIdAsync(string userId)
         {
             var provider = await _context.Providers.FirstOrDefaultAsync(p => p.UserId == userId);
             return provider ;

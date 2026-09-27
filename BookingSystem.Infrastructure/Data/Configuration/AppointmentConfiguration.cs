@@ -16,10 +16,7 @@ namespace BookingSystem.Infrastructure.Data.Configuration
                 .HasForeignKey(a => a.ProviderId)
                 .IsRequired();
 
-            builder.HasOne(a => a.User)
-                .WithMany(u => u.Appointments)
-                .HasForeignKey(a => a.UserId)
-                .IsRequired(false);
+           
         }
     }
 }

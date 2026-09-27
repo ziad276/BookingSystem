@@ -18,7 +18,7 @@ namespace BookingSystem.Application.Services
             return await _providerRepository.GetProviderListAsync();
         }
 
-        public async Task<bool> CreateProviderAccountAsync(int userId)
+        public async Task<bool> CreateProviderAccountAsync(string userId)
         {
             var existingProvider = await _providerRepository.GetProviderByUserIdAsync(userId);
 

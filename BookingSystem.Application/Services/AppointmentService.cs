@@ -15,7 +15,7 @@ namespace BookingSystem.Application.Services
             _appointmentRepository = appointmentRepository;
         }
 
-        public async Task<BookingResult> BookingAppointmentAsync(int appointmentId, int userId)
+        public async Task<BookingResult> BookingAppointmentAsync(int appointmentId, string userId)
         {
             //Check if the appointment exists
             var appointment = await _appointmentRepository.GetAppointmentByIdAsync(appointmentId);
@@ -72,7 +72,7 @@ namespace BookingSystem.Application.Services
            
         }
 
-        public async Task<BookingResult> UnbookingAppointmentAsync(int appointmentId, int userId)
+        public async Task<BookingResult> UnbookingAppointmentAsync(int appointmentId, string userId)
         {
             var appointment = await _appointmentRepository.GetAppointmentByIdAsync(appointmentId);
 

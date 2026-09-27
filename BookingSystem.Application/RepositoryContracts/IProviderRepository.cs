@@ -7,7 +7,7 @@ namespace BookingSystem.Application.Repository
 {
     public interface IProviderRepository
     {
-        Task<Provider> GetProviderByUserIdAsync(int userId);
+        Task<Provider> GetProviderByUserIdAsync(string userId);
         Task<bool> AddProviderAccountAsync(Provider provider);
         Task<List<Provider>> GetProviderListAsync();
     }
