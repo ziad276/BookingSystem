@@ -11,7 +11,7 @@ namespace BookingSystem.Core.IdentityEntities
         public string Name { get; set; }
         public Provider Provider { get; set; }
         public List<Appointment> Appointments { get; set; }
-        public Role Role { get; set; } = Role.Client;
+        public Role Role { get; set; } 
 
         public DateTime CreatedDate { get; set; }
     }

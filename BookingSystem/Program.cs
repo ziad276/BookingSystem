@@ -22,9 +22,11 @@ builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 // Services 
 builder.Services.AddScoped<IProviderService, ProviderService>();
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
