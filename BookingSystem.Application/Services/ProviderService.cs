@@ -32,5 +32,10 @@ namespace BookingSystem.Application.Services
             return await _providerRepository.AddProviderAccountAsync(new Provider { UserId = userId });
 
         }
+
+        public async Task<Provider> GetProviderByUserIdAsync(string userId)
+        {
+            return await _providerRepository.GetProviderByUserIdAsync(userId);
+        }
     }
 }

@@ -1,0 +1,43 @@
+@model BookingSystem.UI.Models.CreateAppointmentViewModel
+@{
+    ViewData["Title"] = "Create Appointment Slot";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="card-title mb-0 fw-bold">
+                        <i class="bi bi-calendar-plus text-primary me-2"></i>Create New Slot
+                    </h4>
+                    <a asp-action="MySlots" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1"></i> Back to My Slots
+                    </a>
+                </div>
+
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <form asp-action="Create" method="post">
+                    <div class="mb-3">
+                        <label asp-for="StartTime" class="form-label fw-semibold"></label>
+                        <input asp-for="StartTime" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="StartTime" class="text-danger small"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label asp-for="EndTime" class="form-label fw-semibold"></label>
+                        <input asp-for="EndTime" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="EndTime" class="text-danger small"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2">
+                        <i class="bi bi-plus-circle me-1"></i> Publish Slot
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

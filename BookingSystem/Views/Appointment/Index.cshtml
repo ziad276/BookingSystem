@@ -1,5 +1,72 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@using BookingSystem.Core.Entities
+@model List<Appointment>
 @{
+    ViewData["Title"] = "Available Slots";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h3 class="fw-bold mb-1">
+            <i class="bi bi-calendar2-check text-primary me-2"></i>Available Appointment Slots
+        </h3>
+        <p class="text-muted mb-0">Select an open slot to book an appointment.</p>
+    </div>
+    <a asp-controller="Provider" asp-action="Index" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left me-1"></i> Back to Providers
+    </a>
+</div>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-info shadow-sm d-flex align-items-center">
+        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+        <div>
+            No available appointment slots found for this provider right now. Please check back later.
+        </div>
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var slot in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">
+                                <i class="bi bi-check2-circle me-1"></i>Available
+                            </span>
+                            <small class="text-muted">Slot #@slot.Id</small>
+                        </div>
+                        <div class="mb-2">
+                            <i class="bi bi-calendar-event text-primary me-2"></i>
+                            <strong>Date:</strong> @slot.StartTime.ToString("ddd, dd MMM yyyy")
+                        </div>
+                        <div class="mb-2">
+                            <i class="bi bi-clock text-primary me-2"></i>
+                            <strong>Time:</strong> @slot.StartTime.ToString("hh:mm tt") - @slot.EndTime.ToString("hh:mm tt")
+                        </div>
+                        <hr class="my-3" />
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <form asp-controller="Appointment" asp-action="Book" method="post">
+                                <input type="hidden" name="appointmentId" value="@slot.Id" />
+                                <input type="hidden" name="providerId" value="@slot.ProviderId" />
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-calendar-check me-1"></i> Book Slot
+                                </button>
+                            </form>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary w-100">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Login to Book
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 }

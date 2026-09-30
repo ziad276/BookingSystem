@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="px-4 py-5 text-center my-4">
+    <i class="bi bi-calendar-check display-1 text-primary"></i>
+    <h1 class="display-5 fw-bold mt-3">Welcome to BookingSystem</h1>
+    <p class="col-lg-6 mx-auto lead text-muted">
+        Browse providers, book appointment slots, and manage your schedule — easily and efficiently.
+    </p>
+    <div class="d-flex gap-3 justify-content-center mt-4">
+        <a asp-controller="Provider" asp-action="Index" class="btn btn-primary btn-lg">
+            <i class="bi bi-search me-1"></i> Browse Providers
+        </a>
+        @if (User.Identity?.IsAuthenticated != true)
+        {
+            <a asp-controller="Account" asp-action="Register" class="btn btn-outline-primary btn-lg">
+                <i class="bi bi-person-plus me-1"></i> Get Started
+            </a>
+        }
+        else if (!User.IsInRole("Provider"))
+        {
+            <form asp-controller="Provider" asp-action="BecomeProvider" method="post" class="d-inline">
+                <button type="submit" class="btn btn-outline-success btn-lg">
+                    <i class="bi bi-briefcase me-1"></i> Become a Provider
+                </button>
+            </form>
+        }
+    </div>
+</div>

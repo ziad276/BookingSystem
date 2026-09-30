@@ -7,5 +7,8 @@ namespace BookingSystem.Application.ServiceContracts
     {
         Task<bool> BecomeProviderAsync(string userId);
         Task<List<Provider>> BrowseProvidersAsync();
+        Task<Provider> GetProviderByUserIdAsync(string userId);
+
+
     }
 }
