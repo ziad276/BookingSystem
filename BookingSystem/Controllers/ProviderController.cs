@@ -20,6 +20,17 @@ namespace BookingSystem.UI.Controllers
             _userManager = userManager;
             _providerService = providerService;
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
+        {
+            var providers = await _providerService.BrowseProvidersAsync();
+
+            return View(providers);
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> BecomeProvider()
         {
