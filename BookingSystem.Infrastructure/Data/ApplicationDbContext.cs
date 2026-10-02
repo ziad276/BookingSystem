@@ -1,4 +1,4 @@
-﻿using BookingSystem.Core.Entities;
+using BookingSystem.Core.Entities;
 using BookingSystem.Core.IdentityEntities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +20,8 @@ namespace BookingSystem.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
+
         }
 
 

@@ -29,7 +29,7 @@ namespace BookingSystem.Infrastructure.Repositories
 
         public async Task<List<Provider>> GetProviderListAsync()
         {
-            return await _context.Providers.ToListAsync();
+            return await _context.Providers.Include(p => p.User).ToListAsync();
         }
     }
 }

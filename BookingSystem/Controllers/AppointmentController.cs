@@ -31,7 +31,7 @@ namespace BookingSystem.UI.Controllers
 
         [Authorize(Roles = "Provider")]
         [HttpGet]
-        public IActionResult CreateAppointmentAsync()
+        public IActionResult Create()
         {
             return View();
         }

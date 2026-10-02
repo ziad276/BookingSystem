@@ -1,0 +1,143 @@
+{
+  "Providers": [
+    {
+      "Name": "Dr. John Smith",
+      "Email": "john.smith@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Dr. Sarah Wilson",
+      "Email": "sarah.wilson@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Dr. Michael Brown",
+      "Email": "michael.brown@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Dr. Emily Davis",
+      "Email": "emily.davis@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Dr. James Anderson",
+      "Email": "james.anderson@example.com",
+      "Password": "Password123!"
+    }
+  ],
+  "Clients": [
+    {
+      "Name": "Jane Doe",
+      "Email": "jane.doe@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Robert Johnson",
+      "Email": "robert.johnson@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Alice Williams",
+      "Email": "alice.williams@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "David Miller",
+      "Email": "david.miller@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Sophia Moore",
+      "Email": "sophia.moore@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Daniel Taylor",
+      "Email": "daniel.taylor@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Olivia Thomas",
+      "Email": "olivia.thomas@example.com",
+      "Password": "Password123!"
+    },
+    {
+      "Name": "Matthew Jackson",
+      "Email": "matthew.jackson@example.com",
+      "Password": "Password123!"
+    }
+  ],
+  "Slots": [
+    {
+      "ProviderIndex": 0,
+      "DaysFromNow": 1,
+      "StartHour": 9,
+      "EndHour": 10,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 0,
+      "DaysFromNow": 1,
+      "StartHour": 11,
+      "EndHour": 12,
+      "IsBooked": true
+    },
+    {
+      "ProviderIndex": 1,
+      "DaysFromNow": 1,
+      "StartHour": 9,
+      "EndHour": 10,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 1,
+      "DaysFromNow": 1,
+      "StartHour": 14,
+      "EndHour": 15,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 2,
+      "DaysFromNow": 2,
+      "StartHour": 10,
+      "EndHour": 11,
+      "IsBooked": true
+    },
+    {
+      "ProviderIndex": 2,
+      "DaysFromNow": 2,
+      "StartHour": 15,
+      "EndHour": 16,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 3,
+      "DaysFromNow": 3,
+      "StartHour": 9,
+      "EndHour": 10,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 3,
+      "DaysFromNow": 3,
+      "StartHour": 13,
+      "EndHour": 14,
+      "IsBooked": true
+    },
+    {
+      "ProviderIndex": 4,
+      "DaysFromNow": 4,
+      "StartHour": 10,
+      "EndHour": 11,
+      "IsBooked": false
+    },
+    {
+      "ProviderIndex": 4,
+      "DaysFromNow": 4,
+      "StartHour": 15,
+      "EndHour": 16,
+      "IsBooked": false
+    }
+  ]
+}
